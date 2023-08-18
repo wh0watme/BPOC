@@ -1,1 +1,1 @@
-<script>alert(‘XSS’)</script>
+myurl = "javascript:alert(1)"
