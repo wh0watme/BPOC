@@ -105,6 +105,7 @@
             var textbox2Value = document.getElementById("textbox2").value;
             
             // Handle form submission logic here, e.g., send data to Google Sheets.
+			google.script.run.submitForm(textbox1Value, textbox2Value);
         }
     </script>
 </body>
